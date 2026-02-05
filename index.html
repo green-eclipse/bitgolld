@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bit Gold ($BTG)</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+    body {
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #f5d77a;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: fadeDown 1.2s ease;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+
+    .badge {
+      padding: 8px 16px;
+      border: 1px solid #f5d77a;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      background: rgba(245,215,122,0.1);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-top: 80px;
+    }
+
+    .hero-text h2 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      animation: glow 3s infinite alternate;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin-right: 15px;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      background: linear-gradient(135deg, #f5d77a, #c9a742);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .buttons a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(245,215,122,0.4);
+    }
+
+    .coin-wrap {
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .coin {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at top left, #fff2b0, #d4af37, #8a6d1f);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+      font-weight: bold;
+      color: #000;
+      animation: spin 12s linear infinite;
+      box-shadow: 0 0 60px rgba(245,215,122,0.4);
+    }
+
+    .coin::after {
+      content: 'BIT GOLD';
+      position: absolute;
+      bottom: -40px;
+      font-size: 1rem;
+      letter-spacing: 4px;
+      color: #f5d77a;
+    }
+
+    section {
+      margin-top: 120px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(245,215,122,0.2);
+      border-radius: 16px;
+      padding: 30px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    footer {
+      margin-top: 140px;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .address {
+      margin-top: 20px;
+      font-size: 0.85rem;
+      word-break: break-all;
+      color: #f5d77a;
+    }
+
+    @keyframes spin {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(245,215,122,0.4); }
+      to { text-shadow: 0 0 25px rgba(245,215,122,0.9); }
+    }
+
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .buttons a { margin-bottom: 10px; }
+    }
+  
+    .copy-btn {
+      margin-top: 15px;
+      padding: 10px 22px;
+      border-radius: 20px;
+      border: 1px solid #f5d77a;
+      background: transparent;
+      color: #f5d77a;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #f5d77a;
+      color: #000;
+    }
+
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: radial-gradient(rgba(245,215,122,0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+      animation: moveBg 40s linear infinite;
+    }
+
+    @keyframes moveBg {
+      from { background-position: 0 0; }
+      to { background-position: 400px 400px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="particles"></div>
+
+  <div class="container">
+    <header>
+      <h1>$BTG</h1>
+      <div class="badge">The Original Digital Scarcity</div>
+    </header>
+
+    <div class="hero">
+      <div class="hero-text">
+        <h2>Bit Gold<br/>on Solana</h2>
+        <p>Scarcity meets speed. Bit Gold is a digital-first store of value narrative revived on Solana with modern liquidity, transparency, and community-driven momentum.</p>
+        <div class="buttons">
+          <a href="https://dexscreener.com/solana/BrhzRrTfFb37Dx3AmnVVCPbvjAHQ9LQwErDoS9MGgWBm" target="_blank">View Chart</a>
+          <a href="https://twitter.com/i/communities/2019327937539908056" target="_blank">Join Community</a>
+        </div>
+      </div>
+      <div class="coin-wrap">
+        <div class="coin">B</div>
+      </div>
+    </div>
+
+    <section>
+      <div class="info-grid">
+        <div class="card">
+          <h3>⚡ Fast & Liquid</h3>
+          <p>Built on Solana for near-instant transactions and smooth trading experience.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 Scarcity Narrative</h3>
+          <p>Inspired by the original Bit Gold concept — digital scarcity before Bitcoin.</p>
+        </div>
+        <div class="card">
+          <h3>🌍 Community Driven</h3>
+          <p>No noise, no overpromises. Just conviction, transparency, and organic growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>Contract Address (Solana)</p>
+      <div class="address" id="contract">9q95SAgjDWGi359se2KfHb8b8zMztGb7fySm3Dx6pump</div>
+      <button class="copy-btn" onclick="copyCA()">Copy Contract</button>
+      <p style="margin-top:20px;">© 2026 Bit Gold. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function copyCA() {
+      const text = document.getElementById('contract').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Contract address copied');
+    }
+  </script>
+</body>
+</html>
